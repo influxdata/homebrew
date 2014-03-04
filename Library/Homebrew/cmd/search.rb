@@ -13,6 +13,8 @@ module Homebrew extend self
   TAP_QUERY_REGEX = /^([^\/]+)\/([^\/]+)\/?(.+)?$/
 
   def search
+    Stats.track_command(:search)
+
     if ARGV.include? '--macports'
       exec_browser "http://www.macports.org/ports.php?by=name&substr=#{ARGV.next}"
     elsif ARGV.include? '--fink'

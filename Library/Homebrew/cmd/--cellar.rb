@@ -1,5 +1,7 @@
 module Homebrew extend self
   def __cellar
+    Stats.track_command("--cellar")
+
     if ARGV.named.empty?
       puts HOMEBREW_CELLAR
     else

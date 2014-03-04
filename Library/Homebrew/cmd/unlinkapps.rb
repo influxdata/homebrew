@@ -4,6 +4,8 @@ require 'keg'
 module Homebrew extend self
 
   def unlinkapps
+    Stats.track_command(:unlinkapps)
+
     target_dir = ARGV.include?("--local") ? File.expand_path("~/Applications") : "/Applications"
 
     unless File.exist? target_dir

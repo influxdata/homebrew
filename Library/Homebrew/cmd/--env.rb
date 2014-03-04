@@ -3,6 +3,8 @@ require 'hardware'
 
 module Homebrew extend self
   def __env
+    Stats.track_command("--env")
+
     ENV.activate_extensions!
 
     if superenv?

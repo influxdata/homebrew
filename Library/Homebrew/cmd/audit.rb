@@ -5,6 +5,8 @@ require 'formula_cellar_checks'
 
 module Homebrew extend self
   def audit
+    Stats.track_command(:audit)
+
     formula_count = 0
     problem_count = 0
 

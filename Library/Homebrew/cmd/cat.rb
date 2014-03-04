@@ -1,5 +1,7 @@
 module Homebrew extend self
   def cat
+    Stats.track_command(:cat)
+
     # do not "fix" this to support multiple arguments, the output would be
     # unparsable, if the user wants to cat multiple formula they can call
     # brew cat multiple times.

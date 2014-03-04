@@ -15,6 +15,8 @@ end
 
 module Homebrew extend self
   def irb
+    Stats.track_command(:irb)
+
     if ARGV.include? "--help"
       puts "'v8'.f # => instance of the Ack formula"
       puts ":hub.f.installed?"

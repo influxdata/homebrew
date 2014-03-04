@@ -4,6 +4,8 @@ require 'blacklist'
 
 module Homebrew extend self
   def install
+    Stats.track_command(:install)
+
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     {
@@ -111,9 +113,13 @@ module Homebrew extend self
     fi.verbose           &&= :quieter if ARGV.quieter?
     fi.debug               = ARGV.debug?
     fi.prelude
+
+    puts fi.inspect
+
     fi.install
     fi.caveats
     fi.finish
+    Stats.track_formula_installation(fi)
   rescue FormulaInstallationAlreadyAttemptedError
     # We already attempted to install f as part of the dependency tree of
     # another formula. In that case, don't generate an error, just move on.

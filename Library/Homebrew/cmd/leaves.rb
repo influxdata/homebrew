@@ -4,6 +4,8 @@ require 'set'
 
 module Homebrew extend self
   def leaves
+    Stats.track_command(:leaves)
+
     installed = Formula.installed
     deps_of_installed = Set.new
 

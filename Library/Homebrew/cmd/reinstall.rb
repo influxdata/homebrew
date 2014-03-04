@@ -6,6 +6,7 @@ module Homebrew extend self
   end
 
   def reinstall_formula f
+    Stats.track_command(:reinstall)
     tab = Tab.for_formula(f)
     options = tab.used_options | f.build.used_options
 

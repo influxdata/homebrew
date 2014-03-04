@@ -83,6 +83,11 @@ module HomebrewArgvExtension
   def one?
     flag? '--1'
   end
+
+  def no_stats?
+    flag? '--no-stats' or !ENV['HOMEBREW_NO_STATS'].nil?
+  end
+
   def dry_run?
     include?('--dry-run') || switch?('n')
   end

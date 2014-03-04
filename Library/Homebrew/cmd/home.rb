@@ -1,5 +1,7 @@
 module Homebrew extend self
   def home
+    Stats.track_command(:home)
+
     if ARGV.named.empty?
       exec_browser HOMEBREW_WWW
     else

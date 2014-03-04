@@ -3,6 +3,8 @@ require 'cmd/untap'
 
 module Homebrew extend self
   def update
+    Stats.track_command(:update)
+
     unless ARGV.named.empty?
       abort <<-EOS.undent
         This command updates brew itself, and does not take formula names.

@@ -2,6 +2,8 @@ require 'formula'
 
 module Homebrew extend self
   def options
+    Stats.track_command(:options)
+
     if ARGV.include? '--all'
       puts_options Formula.to_a
     elsif ARGV.include? '--installed'

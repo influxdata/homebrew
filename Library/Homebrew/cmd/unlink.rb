@@ -1,5 +1,7 @@
 module Homebrew extend self
   def unlink
+    Stats.track_command(:unlink)
+
     raise KegUnspecifiedError if ARGV.named.empty?
 
     ARGV.kegs.each do |keg|

@@ -1,5 +1,7 @@
 module Homebrew extend self
   def __prefix
+    Stats.track_command("--prefix")
+
     if ARGV.named.empty?
       puts HOMEBREW_PREFIX
     else

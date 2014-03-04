@@ -2,6 +2,8 @@ require 'formula'
 
 module Homebrew extend self
   def fetch
+    Stats.track_command(:fetch)
+
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     if ARGV.include? '--deps'

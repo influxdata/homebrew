@@ -3,6 +3,8 @@ require 'formula'
 
 module Homebrew extend self
   def sh
+    Stats.track_command(:sh)
+
     ENV.activate_extensions!
 
     if superenv?

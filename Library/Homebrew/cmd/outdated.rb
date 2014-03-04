@@ -3,6 +3,8 @@ require 'keg'
 
 module Homebrew extend self
   def outdated
+    Stats.track_command(:outdated)
+
     outdated_brews do |f, versions|
       if $stdout.tty? and not ARGV.flag? '--quiet'
         puts "#{f.name} (#{versions*', '} < #{f.pkg_version})"

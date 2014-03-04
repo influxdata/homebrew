@@ -9,6 +9,8 @@ end
 
 module Homebrew extend self
   def upgrade
+    Stats.track_command(:upgrade)
+
     Homebrew.perform_preinstall_checks
 
     if ARGV.named.empty?

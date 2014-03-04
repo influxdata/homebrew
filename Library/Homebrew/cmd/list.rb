@@ -1,5 +1,6 @@
 module Homebrew extend self
   def list
+    Stats.track_command(:list)
 
     # Use of exec means we don't explicitly exit
     list_unbrewed if ARGV.flag? '--unbrewed'

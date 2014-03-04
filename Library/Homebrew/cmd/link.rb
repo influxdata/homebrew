@@ -3,6 +3,8 @@ require 'ostruct'
 module Homebrew extend self
 
   def link
+    Stats.track_command(:link)
+
     raise KegUnspecifiedError if ARGV.named.empty?
 
     mode = OpenStruct.new

@@ -1,5 +1,7 @@
 module Homebrew extend self
   def commands
+    Stats.track_command(:commands)
+
     # Find commands in Homebrew/cmd
     cmds = (HOMEBREW_REPOSITORY/"Library/Homebrew/cmd").
            children(with_directory=false).

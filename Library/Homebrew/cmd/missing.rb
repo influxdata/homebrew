@@ -26,6 +26,8 @@ module Homebrew extend self
   end
 
   def missing
+    Stats.track_command(:missing)
+
     return unless HOMEBREW_CELLAR.exist?
 
     ff = if ARGV.named.empty?

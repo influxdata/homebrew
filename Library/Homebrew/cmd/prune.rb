@@ -3,6 +3,7 @@ require 'cmd/tap'
 
 module Homebrew extend self
   def prune
+    Stats.track_command(:prune)
     ObserverPathnameExtension.reset_counts!
 
     dirs = []

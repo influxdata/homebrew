@@ -3,6 +3,8 @@ require 'ostruct'
 
 module Homebrew extend self
   def deps
+    Stats.track_command(:deps)
+
     mode = OpenStruct.new(
       :installed?  => ARGV.include?('--installed'),
       :tree?       => ARGV.include?('--tree'),

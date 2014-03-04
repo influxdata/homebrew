@@ -4,6 +4,7 @@ require 'os/mac'
 require 'utils/json'
 require 'utils/inreplace'
 require 'open-uri'
+require 'utils/stats'
 
 class Tty
   class << self

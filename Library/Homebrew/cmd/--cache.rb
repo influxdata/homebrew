@@ -2,6 +2,8 @@ require "cmd/fetch"
 
 module Homebrew extend self
   def __cache
+    Stats.track_command("--cache")
+
     if ARGV.named.empty?
       puts HOMEBREW_CACHE
     else
