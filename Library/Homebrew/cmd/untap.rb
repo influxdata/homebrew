@@ -2,8 +2,6 @@ require 'cmd/tap' # for tap_args
 
 module Homebrew extend self
   def untap
-    Stats.track_command(:untap)
-
     raise "Usage is `brew untap <tap-name>`" if ARGV.empty?
 
     user, repo = tap_args

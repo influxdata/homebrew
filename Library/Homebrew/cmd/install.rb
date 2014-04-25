@@ -4,8 +4,6 @@ require 'blacklist'
 
 module Homebrew extend self
   def install
-    Stats.track_command(:install)
-
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     {

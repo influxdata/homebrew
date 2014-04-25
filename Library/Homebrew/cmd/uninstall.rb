@@ -3,8 +3,6 @@ require 'formula'
 
 module Homebrew extend self
   def uninstall
-    Stats.track_command(:uninstall)
-
     raise KegUnspecifiedError if ARGV.named.empty?
 
     if not ARGV.force?

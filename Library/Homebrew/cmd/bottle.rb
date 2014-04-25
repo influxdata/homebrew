@@ -249,8 +249,6 @@ module Homebrew extend self
   end
 
   def bottle
-    Stats.track_command(:bottle)
-
     merge if ARGV.include? '--merge'
 
     ARGV.formulae.each do |f|

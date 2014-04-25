@@ -1111,8 +1111,6 @@ end # end class Checks
 
 module Homebrew extend self
   def doctor
-    Stats.track_command(:doctor)
-
     checks = Checks.new
 
     if ARGV.include? '--list-checks'

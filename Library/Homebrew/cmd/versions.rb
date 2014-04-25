@@ -2,8 +2,6 @@ require 'formula'
 
 module Homebrew extend self
   def versions
-    Stats.track_command(:version)
-
     raise "Please `brew install git` first" unless which "git"
     raise "Please `brew update' first" unless (HOMEBREW_REPOSITORY/".git").directory?
 

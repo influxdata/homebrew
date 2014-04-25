@@ -1,8 +1,6 @@
 module Homebrew extend self
 
   def tap
-    Stats.track_command(:tap)
-
     if ARGV.empty?
       tapd = HOMEBREW_LIBRARY/"Taps"
       tapd.children.each do |tap|

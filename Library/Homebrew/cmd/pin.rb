@@ -2,8 +2,6 @@ require 'formula'
 
 module Homebrew extend self
   def pin
-    Stats.track_command(:pin)
-
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     ARGV.formulae.each do |f|

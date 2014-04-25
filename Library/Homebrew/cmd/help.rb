@@ -33,11 +33,9 @@ EOS
 
 module Homebrew extend self
   def help
-    Stats.track_command(:help)
     puts HOMEBREW_HELP
   end
   def help_s
-    Stats.track_command(:help_s)
     HOMEBREW_HELP
   end
 end

@@ -6,8 +6,6 @@ require 'formula'
 
 module Homebrew extend self
   def uses
-    Stats.track_command(:uses)
-
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     used_formulae = ARGV.formulae

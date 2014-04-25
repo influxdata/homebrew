@@ -2,8 +2,6 @@ require "formula"
 
 module Homebrew extend self
   def diy
-    Stats.track_command(:diy)
-
     %w[name version].each do |opt|
       if ARGV.include? "--set-#{opt}"
         opoo "--set-#{opt} is deprecated, please use --#{opt}=<#{opt}> instead"

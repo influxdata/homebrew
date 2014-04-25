@@ -2,8 +2,6 @@ require 'hardware'
 
 module Homebrew extend self
   def __config
-    Stats.track_command("--config")
-
     dump_verbose_config
   end
 

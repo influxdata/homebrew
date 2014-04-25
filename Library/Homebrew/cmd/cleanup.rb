@@ -5,8 +5,6 @@ require 'bottles'
 module Homebrew extend self
 
   def cleanup
-    Stats.track_command(:cleanup)
-
     return unless HOMEBREW_CELLAR.directory?
 
     if ARGV.named.empty?

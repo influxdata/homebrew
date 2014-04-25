@@ -1,7 +1,5 @@
 module Homebrew extend self
   def log
-    Stats.track_command(:log)
-
     if ARGV.named.empty?
       cd HOMEBREW_REPOSITORY
       exec "git", "log", *ARGV.options_only

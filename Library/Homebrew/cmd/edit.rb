@@ -2,8 +2,6 @@ require 'formula'
 
 module Homebrew extend self
   def edit
-    Stats.track_command(:edit)
-
     unless (HOMEBREW_REPOSITORY/'.git').directory?
       raise <<-EOS.undent
         Changes will be lost!

@@ -8,8 +8,6 @@ module Homebrew extend self
   TEST_TIMEOUT_SECONDS = 5*60
 
   def test
-    Stats.track_command(:test)
-
     raise FormulaUnspecifiedError if ARGV.named.empty?
 
     ENV.extend(Stdenv)
